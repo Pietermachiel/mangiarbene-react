@@ -1,0 +1,12 @@
+development
+
+npm i react react-dom react-hot-loader react-router-dom react-scripts react-redux redux sass-loader --save-dev
+npm i babel-loader @babel/core @babel/plugin-proposal-class-properties @babel/preset-env @babel/preset-react --save-dev
+npm i webpack webpack-cli webpack-dev-server webpack-node-externals uglifyjs-webpack-plugin style-loader postcss-loader html-loader html-webpack-plugin --save-dev
+npm i optimize-css-assets-webpack-plugin mini-css-extract-plugin clean-css-loader css-loader cssnano node-sass --save-dev
+
+dependencies
+
+npm i autoprefixer bootstrap classnames jquery json2m lodash.debounce prop-types uuid
+npm i react-helmet react-html-parser react-offcanvas react-router-scroll-top
+

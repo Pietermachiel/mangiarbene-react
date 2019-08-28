@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+$sans: "museo-sans", Helvetica, Arial, sans-serif;
+$mono: "Fira Mono", monospace;
+$serif: "rufina", serif;
+$fontsize:   18px;
+$smaller:  $fontsize * 0.875;
+$bigger:  $fontsize * 1.125;
+$lineheight: 1.5;
+$spacing: 36px;
+
+// Min-width of the content area
+$on-palm:      769px;
+$on-tablet:    1024px;
+$on-laptop:    1200px;
+
+
+$text-color:       #111;
+$bg-color: #fdfdfd;
+
+$tshadow:          0px 0px 25px #323331;
+
+$zwart:            #111;
+$wit:              #fdfdfd;
+
+$brand:            rgb(85,26,139);
+$background:       #f5e3e3;
+
+$blauw:            #2282E1;
+$paars:            rgb(85,26,139);
+$rood:             rgb(219, 50, 38);
+
+$grijs-60:         rgb(100,100,100);
+$grijs-50:         rgb(127,127,127);
+$grijs-40:         rgb(178,178,178);
+$grijs-20:         rgb(200,200,200);
+$grijs-10:         rgb(230,230,230);
+
+@import "./sass/basics/_base",
+        "./sass/basics/_typo",
+        "./sass/basics/_color",
+        "./sass/basics/_grid",
+        "./sass/basics/_kramdown",
+        "./sass/navigation/_footer",
+        "./sass/navigation/_header",
+        "./sass/navigation/_nav",
+        "./sass/pages/_blog",
+        "./sass/pages/_books",
+        "./sass/pages/_home",
+        "./sass/pages/_recipes"
+;
+
+

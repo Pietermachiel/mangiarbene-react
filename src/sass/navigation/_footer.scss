@@ -1,0 +1,86 @@
+/*------------------------------------*\
+  #NAVIGATION-FOOTER
+\*------------------------------------*/
+
+.footer .nav {
+    line-height: 1;
+    margin-bottom: 1.5em;
+    margin-top: .5em;
+    font-size: 24px;
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+
+.category+.footer {
+    margin-top: -1em;
+}
+
+.footer {
+    // background: #f7dedb;
+    margin-top: 2em;
+    position: relative;
+}
+
+.footer .container {
+    padding-bottom: 0;
+    padding-top: 2em;
+}
+
+.footer::before {
+    border-top: 1px dashed #f1f7f8;
+    content: '';
+    display: block;
+    position: absolute;
+    top: -1px;
+    width: 100%;
+}
+
+.logo-footer {
+    a {
+        color: $brand;
+        font-size: 24px;
+        font-weight: 600;        
+    }
+    p {
+        font-size: 20px;
+        @media (min-width: 768px) {
+            display: inline;
+        }
+    }
+    margin-bottom: 1rem;
+}
+
+.footer-social {
+    color: $brand;   
+    padding-top: 2em; 
+    padding-bottom: 6em; 
+}
+
+.footer-social_icons {
+    display: block;
+    margin-top: 5px;
+    @media (min-width: 768px) {
+      display: inline;
+      margin-top: 0;
+    }
+    i.fa-github,
+    i.fa-circle {
+        color: $brand;
+        font-size: 2em;
+    }
+    i.fa-linkedin,
+    i.fa-facebook {
+        color: #e8e8e8;
+    }
+
+}
+
+a.pieterroozen {
+    border-bottom: 1px solid silver;
+    line-height: 18px;
+    display: inline-block;
+    padding-bottom: 2px;
+    font-weight: 300;
+}

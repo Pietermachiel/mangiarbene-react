@@ -1,0 +1,86 @@
+/*------------------------------------*\
+  #PAGES-HOME   
+\*------------------------------------*/
+.home-img {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: 2em;
+	img {
+		width: 60px;
+		border-radius: 50%;
+	}
+	.theart {
+		color: $brand;
+		p {
+			border-bottom: 1px solid rgb(173, 173, 173);
+			padding-top: 16px;			
+			font-weight: 300;
+		}
+		a {
+			border-bottom: 1px solid silver;
+			line-height: 18px;
+			display: inline-block;
+			padding-bottom: 2px;
+			margin-left: 1em;
+			// padding-top: 16px;			
+			font-weight: 400;
+			color: $brand;
+		}
+	}
+}
+.home-quote {
+	margin-bottom: 2rem;
+	font-family: $mono;
+	p.pellegrino {
+		font-family: $sans;
+		font-size: 16px;
+		margin-bottom: 48px;
+	}	
+	span {
+		color: $brand;
+		border-bottom: 1px solid rgb(173, 173, 173);
+		padding-bottom: 1px;
+	}
+}
+
+.home-database {
+	margin-bottom: 2rem;
+	h3 {
+		color: $zwart;
+    font-weight: 300;
+    margin-bottom: 0;
+	}
+	p {
+		font-size: 21px;
+		font-weight: 300;
+		margin-bottom: 1em;
+	}
+}
+
+.home-post {
+	margin-bottom: 2rem;
+	h3 {
+		color: $zwart;
+    font-weight: 300;
+    margin-bottom: 0;
+	}
+	p {
+		font-size: 21px;
+		font-weight: 300;
+		margin-bottom: 1em;
+	};
+}
+
+.home-recipe {
+	margin-bottom: 2rem;
+}
+
+.home-endpoints {
+	margin-bottom: 2rem;
+}
+
+.home-book {
+	margin-bottom: 2rem;
+}

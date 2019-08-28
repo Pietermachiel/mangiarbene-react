@@ -1,0 +1,153 @@
+/*------------------------------------*\
+  #NAVIGATION-NAV
+\*------------------------------------*/
+
+.menu-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @media (min-width: $on-palm) {
+        position: relative;
+    }
+}
+
+// .navbox-panel[aria-expanded=true] {
+//     opacity: 1;
+//     visibility: visible;
+// }
+
+.navbox-panel {
+    @media (max-width: $on-palm) {
+        position: fixed;
+        display: flex;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        background-color: #f7d0cb;
+        list-style: none;
+        transition: all .2s ease-in-out;
+        will-change: top;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 10;        
+    }
+    // @media (min-width: $on-tablet) {
+    //     // visibility: visible;
+    //     // opacity: 1;
+    //     // background: none;
+    //     display: flex;
+    //     flex-basis: auto;
+    //     // flex-flow: row wrap;
+    //     justify-content: space-between;
+    //     width: calc(100% - 300px);
+    //     align-items: center;
+    //     padding-left: 10px;
+    //     padding-right: 10px;
+    // }
+}
+
+.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hamburger {
+    padding: 9.5px 12px;
+    display: block;
+    float: right;
+    position: absolute;
+    top: 48px;
+    right: 60px;
+    background-color: transparent;
+    // width: 23px;
+    // height: 16px;
+    margin: 0; // 20px 0 20px 36px
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    z-index: 10000;
+    @media (min-width: $on-palm) {
+        display: none;
+    }
+}
+
+.hamburger span {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $brand;
+    -webkit-transition: all .25s .1s;
+    transition: all .25s .1s;
+}
+
+
+// first child
+
+.hamburger.navbox--menu-open  span:first-child {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.hamburger.navbox--menu-open  span:first-child, 
+.navbox--menu-open .hamburger span:nth-child(3) {
+    top: 9px;
+}
+
+.hamburger span:first-child {
+    top: 0;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+}
+.hamburger.navbox--menu-open  span {
+    background-color: $brand;
+}
+.navbox--inverted .hamburger span {
+    background-color: $brand;
+}
+
+// second child
+
+.hamburger span:nth-child(2) {
+    bottom: 1px;
+}
+
+.hamburger.navbox--menu-open  span:nth-child(2) {
+    width: 0;
+    opacity: 0;
+    -webkit-transition: all .25s;
+    transition: all .25s;
+}
+
+.hamburger span:nth-child(2) {
+    bottom: 1px;
+}
+
+// third child
+
+.hamburger.navbox--menu-open  span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.hamburger.navbox--menu-open  span:first-child, 
+.hamburger.navbox--menu-open  span:nth-child(3) {
+    top: 8px;
+}
+.hamburger span:nth-child(3) {
+    top: 8px;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+}

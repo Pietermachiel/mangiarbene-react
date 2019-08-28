@@ -1,0 +1,141 @@
+/*------------------------------------*\
+  #PAGES-RECIPES
+\*------------------------------------*/
+.recipes {
+	margin-top: 12px;
+  h1 {
+    margin-bottom: 2rem;
+  }
+  .dish-title {
+    margin-bottom: 2rem;
+  }
+  margin-bottom: 2rem;
+}
+.dish {
+  margin-bottom: 3rem;
+}
+.recipe {
+  margin-bottom: 2rem;
+  h3 {
+    margin-bottom: 0;  
+    color: $rood;
+  }
+}
+.credits {
+  h5 {
+    font-size: 1.5em;
+    font-weight: 300;
+    span {
+      font-weight: 400;
+      font-size: 21px;
+    }
+  }
+}
+
+
+// layout-recipes
+
+.layout-recipes {
+  h1 {
+    color: $rood;
+    margin-top: 10px;
+    margin-bottom: 24px;  
+  }
+  p {
+    font-family: $serif;
+    font-size: 21px;
+    margin-bottom: 0;
+  }  
+}
+
+// recipe-box
+
+.recipe-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.recipe-box_image {
+  width: 100%;
+  margin-bottom: 36px;
+  @media (min-width: 768px) {
+    width: calc(50% - 10px);
+  }  
+  img {
+    width: 95%;
+  }
+}
+
+.recipe-box_credits {
+  width: 100%;
+  @media (min-width: 768px) {
+    width: calc(50% - 10px);
+  }
+  h6 {
+    color: $blauw;
+    font-weight: 600;
+  }
+}
+
+// recipe
+
+.recipe-recipe {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 2rem;
+  span {
+    display: block;
+    margin-bottom: 1em;
+    font-size: 16px;
+    padding-left: 24px;
+  }
+}
+
+.recipe-recipe_ingredients {
+  width: 100%;
+  @media (min-width: 768px) {
+    width: calc(50% - 10px);
+  }
+  p {
+    font-family: $serif;
+    font-size: 21px;
+    margin-bottom: 10px;
+    color: $rood;
+  }
+}
+
+.recipe-recipe_method {
+  width: 100%;
+  @media (min-width: 768px) {
+    width: calc(50% - 10px);
+  }
+  ol {
+    li {
+      counter-increment: step-counter;
+      list-style-type: none;
+      position: relative;
+      margin-left: 24px;
+      font-size: 20px;
+      line-height: 40px;  
+      color: $rood;
+    }
+    li:before {
+      content: counter(step-counter);
+      /* margin-right: 0; */
+      /* background-color: #ff4e4e; */
+      color: $rood;
+      font-size: 1;
+      position: absolute;
+      left: -22px;
+      /* top: -2px; */
+      /* width: 25px; */
+      /* padding: 5px; */
+      /* text-align: center; */
+      line-height: 39px;
+    }    
+  }
+
+}

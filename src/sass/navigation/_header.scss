@@ -1,0 +1,74 @@
+/*------------------------------------*\
+  #NAVIGATION-HEADER
+\*------------------------------------*/
+
+.navbox {
+  position: relative;
+  // padding-top: 2em;
+  // padding-bottom: 3em;
+  // padding: 2em 0 0 20px;
+  padding-top: 2em;
+  padding-left: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 100%;
+  padding-bottom: 12px;
+	@media screen and (min-width: $on-palm){  
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-left: 0;
+		margin: auto;
+		max-width: 628px;
+    padding-bottom: 1em;
+  }
+  .logo {
+    color: $brand;
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 36px;
+    // padding-bottom: 3em;    
+    position: relative;
+    z-index: 100;
+    @media (min-width: $on-palm) {
+      float: left;
+      position: relative;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+  .navbar {
+    float: none;
+    padding-top: 8em;
+    width: 100%;
+    @media (min-width: $on-palm) {
+      float: right;
+      padding-top: 7px;
+    }
+    li {
+      display: block;
+      line-height: 2em;
+      font-size: 30px;
+      font-weight: 200;
+      color: $blauw;
+      text-align: center;
+      @media (min-width: $on-palm) {
+        padding-left: 18px;
+        display: inline;        
+        font-size: 18px;
+        font-weight: 400;
+        color: $blauw;
+      }
+    }  
+  }
+}
+
+// .header .active .nav-link, 
+// .header .nav-link:hover {
+//     border-bottom: 1px solid;
+//     border-bottom-color: #e74c3c;
+//     color: #e74c3c;
+//     text-decoration: none;
+//     transition: .1s;
+// }
+

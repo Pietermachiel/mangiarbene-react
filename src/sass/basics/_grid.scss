@@ -1,0 +1,50 @@
+/*------------------------------------*\
+  #PAGES-GRID
+\*------------------------------------*/
+
+.container {
+	padding: 0 20px;
+    min-height: 1em;
+    position: relative;
+    margin-left: 20px;
+    margin-top: 18px;
+    margin-right: 20px;
+	@media screen and (min-width: $on-palm){  
+		margin: auto;
+		padding: 0 20px;
+		max-width: 668px;
+		min-height: 1em;
+    	width: 100%;
+	}
+}
+
+.grid {
+	width: calc(100vw - 30px);
+  	margin: 0 auto;
+  	@media screen and (min-width: $on-palm){  
+    	width: 688px;
+		display: flex;
+  		flex-flow: row wrap;
+	}
+	@media screen and (min-width: $on-tablet){  
+		width: 824px;
+	}
+	@media screen and (min-width: $on-laptop){  
+		width: 1040px;
+	}
+}
+
+// grid-box
+
+.grid-box {
+	@media screen and (min-width: $on-palm){ 
+		display: flex;
+		flex-flow: row wrap;	
+		justify-content: space-between;
+	}
+}
+
+
+
+
+

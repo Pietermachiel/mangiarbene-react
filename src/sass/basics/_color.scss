@@ -1,0 +1,61 @@
+/*------------------------------------*\
+  #BASICS-COLOR
+\*------------------------------------*/
+
+.colorbox {
+  margin: 15px;
+}
+.borderbox {
+  border-width: 1px;
+  border-style: solid;
+}
+.tshadow {
+  text-shadow: 0px 0px 25px #323331;
+}
+.shadow-in {
+  background-color: #333;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(255,255,255,0.5) 2px 3px 6px;
+}
+
+
+// brand
+
+.brand{
+  color: $brand;
+}
+
+// background
+
+.background{
+  color: $background;
+}
+
+// text-color
+
+.text-color{
+  color: $text-color;
+}
+
+// zwart
+
+.zwart {
+  color: $zwart !important; 
+}
+
+// paars
+
+.paars {
+  color: $paars; 
+}
+
+// blauw
+
+.blauw {
+  color: $blauw; 
+}
+
+

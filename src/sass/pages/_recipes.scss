@@ -3,12 +3,26 @@
 \*------------------------------------*/
 .recipes {
 	margin-top: 12px;
+  margin-bottom: 2rem;
   h1 {
     margin-bottom: 2rem;
+    font-size: 42px;
   }
-  .dish-title {
-    margin-bottom: 2rem;
+  h3 {
+    margin-bottom: 0;  
+    color: $rood;
+    font-size: 27px;
   }
+  @media screen and (min-width: $on-palm){  
+    h1 {
+      font-size: 3rem;
+    }
+    h3 {
+      font-size: 2rem;
+    }	
+  }
+}
+.dish-title {
   margin-bottom: 2rem;
 }
 .dish {
@@ -16,11 +30,9 @@
 }
 .recipe {
   margin-bottom: 2rem;
-  h3 {
-    margin-bottom: 0;  
-    color: $rood;
-  }
 }
+
+
 .credits {
   h5 {
     font-size: 1.5em;

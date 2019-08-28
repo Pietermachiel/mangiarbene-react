@@ -42,7 +42,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className='container'>
+      <div className='main'>
         <Nav />
         <Switch>
         <Route exact path='/' component={Home}/>

@@ -14,7 +14,7 @@ export function Recipe (props) {
 
     return (
         <React.Fragment>
-        <div className="layout-recipes">
+        <div className="recipes layout-recipes">
             <h1 className="mb-0">{ recipe.title }</h1>
         </div>
         <div className="recipe-recipe">

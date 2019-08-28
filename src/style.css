@@ -220,6 +220,19 @@ li {
 /*------------------------------------*\
   #PAGES-GRID
 \*------------------------------------*/
+.main {
+  min-height: 1em;
+  position: relative;
+  margin-left: 20px;
+  margin-right: 20px; }
+  @media screen and (min-width: 769px) {
+    .main {
+      margin: auto;
+      padding: 0 20px;
+      max-width: 668px;
+      min-height: 1em;
+      width: 100%; } }
+
 .container {
   padding: 0 20px;
   min-height: 1em;
@@ -708,9 +721,6 @@ a.pieterroozen {
 .navbox {
   position: relative;
   padding-top: 2em;
-  padding-left: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
   width: 100%;
   padding-bottom: 12px; }
   @media screen and (min-width: 769px) {
@@ -802,7 +812,7 @@ a.pieterroozen {
   float: right;
   position: absolute;
   top: 48px;
-  right: 60px;
+  right: 0;
   background-color: transparent;
   margin: 0;
   border: 0;
@@ -909,20 +919,35 @@ a.pieterroozen {
   margin-top: 12px;
   margin-bottom: 2rem; }
   .books h1 {
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    font-size: 42px; }
   .books .kitchen-title {
     margin-bottom: 2rem; }
+  @media screen and (min-width: 769px) {
+    .books h1 {
+      font-size: 3 rem; } }
 
 .book {
   margin-bottom: 2rem; }
   .book h3 {
     margin-bottom: 0;
-    color: #2282E1; }
+    color: #2282E1;
+    font-size: 27px; }
   .book span {
     font-family: "Fira Mono", monospace;
     font-weight: 500;
-    font-size: 27px;
+    font-size: 23px;
     color: black; }
+  .book h5 {
+    font-size: 23px;
+    font-weight: 300; }
+  @media screen and (min-width: 769px) {
+    .book h3 {
+      font-size: 36px; }
+    .book span {
+      font-size: 27px; }
+    .book h5 {
+      font-size: 27px; } }
 
 .layout-books h1 {
   color: #2282E1;
@@ -1043,18 +1068,26 @@ a.pieterroozen {
   margin-top: 12px;
   margin-bottom: 2rem; }
   .recipes h1 {
-    margin-bottom: 2rem; }
-  .recipes .dish-title {
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    font-size: 42px; }
+  .recipes h3 {
+    margin-bottom: 0;
+    color: #db3226;
+    font-size: 27px; }
+  @media screen and (min-width: 769px) {
+    .recipes h1 {
+      font-size: 3rem; }
+    .recipes h3 {
+      font-size: 2rem; } }
+
+.dish-title {
+  margin-bottom: 2rem; }
 
 .dish {
   margin-bottom: 3rem; }
 
 .recipe {
   margin-bottom: 2rem; }
-  .recipe h3 {
-    margin-bottom: 0;
-    color: #db3226; }
 
 .credits h5 {
   font-size: 1.5em;

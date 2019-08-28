@@ -26,9 +26,9 @@ class Books extends Component {
                                     <span>{ book.year}</span> { book.title }
                                 </h3> 
                             </Link>        
-                                <div className="credits">
-                                    <h5>{ book.author }</h5>
-                                </div>        
+                                
+                                <h5>{ book.author }</h5>
+                                      
                             </div>
                             :
                             null

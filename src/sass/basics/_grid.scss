@@ -2,6 +2,22 @@
   #PAGES-GRID
 \*------------------------------------*/
 
+.main {
+	// padding: 0 20px;
+    min-height: 1em;
+    position: relative;
+    margin-left: 20px;
+    // margin-top: 18px;
+    margin-right: 20px;
+	@media screen and (min-width: $on-palm){  
+		margin: auto;
+		padding: 0 20px;
+		max-width: 668px;
+		min-height: 1em;
+    	width: 100%;
+	}
+}
+
 .container {
 	padding: 0 20px;
     min-height: 1em;

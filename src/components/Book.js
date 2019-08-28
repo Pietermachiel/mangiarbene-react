@@ -16,7 +16,7 @@ export function Book (props) {
 
     return (
         <React.Fragment>
-        <div className="layout-books">
+        <div className="books layout-books">
             <h1>{ book.title }</h1>    
         </div>
         <div className="book-box">

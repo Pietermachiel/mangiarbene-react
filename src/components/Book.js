@@ -21,7 +21,7 @@ export function Book (props) {
         </div>
         <div className="book-box">
             <div className="book-box_image">
-                <img src={`/img/books/${slugify(book.title)}_cover.jpg`} alt=""/>
+                <img src={`../public/img/books/${slugify(book.title)}_cover.jpg`} alt=""/>
             </div>
             <div className="book-box_credits">
                 <h6>{  book.author }</h6>    

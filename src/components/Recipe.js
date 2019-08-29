@@ -56,7 +56,7 @@ export function Recipe (props) {
                 <React.Fragment key={hit.index}>
                 <h6>{ hit.title }</h6>    
                 <p>{ hit.author }</p>     
-                <p>{ parsedBookContent }</p>     
+                <p>{ parsedBookContent } <span>Read more ></span></p>     
                 </React.Fragment>
                 )
             })

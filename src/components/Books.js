@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { slugify } from './common/common';
+import _ from 'lodash';
 
 class Books extends Component {
 
@@ -9,7 +10,9 @@ class Books extends Component {
         const kitchen = [
             "italian", "dutch", "spanish", "oriental", "english", "usa"
         ]
-        const { books } = this.props;
+        var { books } = this.props;
+        books = _.sortBy(books, ['year']);
+        
         return (
             <div>
                 <div className="books">

@@ -794,7 +794,7 @@ a.pieterroozen {
     height: 100%;
     max-width: 100%;
     max-height: 100%;
-    background-color: #f7d0cb;
+    background-color: #eae9e9;
     list-style: none;
     transition: all .2s ease-in-out;
     will-change: top;
@@ -1088,6 +1088,9 @@ a.pieterroozen {
 
 .recipe {
   margin-bottom: 2rem; }
+  .recipe h3 {
+    color: #db3226;
+    margin-bottom: 0; }
 
 .credits h5 {
   font-size: 1.5em;

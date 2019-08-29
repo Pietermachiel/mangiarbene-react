@@ -19,9 +19,11 @@ class Recipes extends Component {
                     return (
                         <React.Fragment key={hit}>
                         <p className="dish-title">{hit}</p>
-                        {recipes.map(recipe => {
+                        {recipes
+                        .filter(r => hit === r.dish)
+                        .map(recipe => {
                             const thebook = recipe.book.map(b => b.title);
-                            if (hit === recipe.dish)                           
+                            // if (hit === recipe.dish)                           
                             return (
                            <div key={recipe.index} className="recipe">
                             <Link to={"/recipes/" + slugify(recipe.title)}>

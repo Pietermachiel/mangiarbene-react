@@ -21,8 +21,9 @@ class Books extends Component {
                         <React.Fragment key={hit}>
                         <p className="kitchen-title">{hit}</p>
 
-                        {books.map(book => 
-                            hit === book.kitchen ?
+                        {books
+                        .filter(b => hit === b.kitchen)
+                        .map(book => 
                             <div key={book.index} className="book">
                             <Link to={"/books/" + slugify(book.title)}>
                                 <h3>
@@ -33,8 +34,6 @@ class Books extends Component {
                                 <h5>{ book.author }</h5>
                                       
                             </div>
-                            :
-                            null
                         )}                            
                         </React.Fragment>
                     )

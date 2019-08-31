@@ -21,17 +21,17 @@ class Recipes extends Component {
                         <p className="dish-title">{hit}</p>
                         {recipes
                         .filter(r => hit === r.dish)
-                        .map(recipe => {
-                            const thebook = recipe.book.map(b => b.title);
+                        .map(({ title, id, index, book, product }) => {
+                            const thebook = book.map(b => b.title);
                             // if (hit === recipe.dish)                           
                             return (
-                           <div key={recipe.index} className="recipe">
-                            <Link to={"/recipes/" + slugify(recipe.title)}>
-                                <h3>{ recipe.title} { recipe.index }</h3> 
+                           <div key={id} className="recipe">
+                            <Link to={`/recipes/${id}`}>
+                                <h3>{ title} { index }</h3> 
                             </Link>        
                                 <div className="credits">
                                     <h5>
-                                        { recipe.product }
+                                        { product }
                                         <span>
                                             <Link to={`/books/${slugify(thebook)}`}>
                                             &nbsp;&nbsp;{thebook}

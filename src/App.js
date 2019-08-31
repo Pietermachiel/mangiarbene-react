@@ -49,7 +49,7 @@ class App extends Component {
         <Route exact path='/blog' component={Posts}/>
         <Route path='/blog/:url' component={Post}/>
         <Route exact path='/recipes' component={Recipes}/>
-        <Route path='/recipes/:url' component={Recipe}/>
+        <Route path='/recipes/:id' component={Recipe}/>
         <Route exact path='/books' component={Books}/>
         <Route path='/books/:url' component={Book}/>
         </Switch>

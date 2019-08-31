@@ -40,7 +40,7 @@ class Posts extends Component {
                                        &nbsp;{ date.getDate() }/{ date.getMonth() }/{ date.getFullYear() }
                                     </span>
                                 </p>
-                                <p>{ parsedPostContent }</p>     
+                                { parsedPostContent }   
                                 </div>                                    
                                 </React.Fragment> 
                             )

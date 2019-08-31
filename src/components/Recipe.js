@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { slugify, truncate } from './common/common';
 import ReactHtmlParser from 'react-html-parser';
@@ -8,9 +8,11 @@ console.log("Recipe works!");
 
 export function Recipe (props) {  
     
-    const recipe = props.recipes.find(({ title }) => slugify(title) === props.match.params.url);
+    const recipe = props.recipes.find(({ id }) => id === props.match.params.id);
 
-    const booktitle = recipe.book.map(hit => slugify(hit.title));
+    const booktitle = slugify(recipe.book[0].title);
+
+    console.log(props);
 
     return (
         <React.Fragment>
@@ -20,26 +22,21 @@ export function Recipe (props) {
         <div className="recipe-recipe">
             <div className="recipe-recipe_ingredients">
                 <span>ingredients</span>
-                <p>You must use</p>
-                <p>The finest ingredients</p>
-                <p>As your raw materials</p>
-                <p>For these will make you shine</p>        
+                <p>ingredient 1</p>
+                <p>ingredient 2</p>
+                <p>ingredient 3</p>
+                <p>ingredient 4</p>           
             </div>
             <div className="recipe-recipe_method">
                 <span>method</span>
                 <ol>
-                    <li>Passion</li>
-                    <li>Care</li>
-                    <li>Precision of method</li>
-                    <li>Will generally suffice</li>    
+                    <li>Step one</li>
+                    <li>Step two</li>
+                    <li>Step three</li>
+                    <li>Step four</li>    
                 </ol>
             </div>
         </div>
-        <br/>
-        <p className="pellegrino">    
-            <b>Pellegrino Artusi</b> 
-            <a href="/">– Science in the Kitchen and the Art of Eating Well</a>
-        </p>
         <br/>
         <hr/>
         <Link className="zwart" to={`/books/${booktitle}`}>
@@ -56,7 +53,7 @@ export function Recipe (props) {
                 <React.Fragment key={hit.index}>
                 <h6>{ hit.title }</h6>    
                 <p>{ hit.author }</p>     
-                <p>{ parsedBookContent } <span>Read more ></span></p>     
+                { parsedBookContent } <span>Read more ></span>    
                 </React.Fragment>
                 )
             })
@@ -75,4 +72,4 @@ function mapStateToProps(state) {
     }
 }
   
-export default connect(mapStateToProps)(Recipe)
+export default withRouter(connect(mapStateToProps)(Recipe))

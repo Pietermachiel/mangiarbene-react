@@ -17,23 +17,23 @@ const apiEndpoint = 'https://trim-seahorse.cloudvent.net/api';
 class App extends Component {
   state = {};
 
-  componentDidMount() {
+  async componentDidMount() {
     const { loadBooks } = this.props
-    fetch(`${apiEndpoint}/books.json`)
+    await fetch(`${apiEndpoint}/books.json`)
     .then(response => response.json())
     .then((json => {
       loadBooks(json)
     }))  
 
     const { loadRecipes } = this.props
-    fetch(`${apiEndpoint}/recipes.json`)
+    await fetch(`${apiEndpoint}/recipes.json`)
     .then(response => response.json())
     .then((json => {
       loadRecipes(json)
     }))  
 
     const { loadPosts } = this.props
-    fetch(`${apiEndpoint}/blog.json`)
+    await fetch(`${apiEndpoint}/blog.json`)
     .then(response => response.json())
     .then((json => {
       loadPosts(json)

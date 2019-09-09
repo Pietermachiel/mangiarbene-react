@@ -645,6 +645,35 @@ li {
 .kramdown mark {
   background-color: #FFF8D7; }
 
+.kramdown .home-img_pieter {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2em; }
+  .kramdown .home-img_pieter img {
+    width: 200px;
+    border-radius: 50%; }
+
+.kramdown .home-img_vangogh {
+  margin-left: -100px;
+  margin-right: -100px;
+  margin-bottom: 2em; }
+  .kramdown .home-img_vangogh img {
+    width: 100%; }
+
+.kramdown .home-img_websites {
+  margin-left: -100px;
+  margin-right: -100px;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between; }
+  .kramdown .home-img_websites img {
+    width: calc(50% - 20px);
+    border: 1px solid gray; }
+
 /*------------------------------------*\
   #BASICS-SYNTAX-HIGHLIGHTING
 \*------------------------------------*/
@@ -1209,22 +1238,22 @@ a.pieterroozen {
 /*------------------------------------*\
   #PAGES-HOME   
 \*------------------------------------*/
-.home-img {
+.home-img_artisjok {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 2em; }
-  .home-img img {
+  .home-img_artisjok img {
     width: 60px;
     border-radius: 50%; }
-  .home-img .theart {
+  .home-img_artisjok .theart {
     color: #551a8b; }
-    .home-img .theart p {
+    .home-img_artisjok .theart p {
       border-bottom: 1px solid #adadad;
       padding-top: 16px;
       font-weight: 300; }
-    .home-img .theart a {
+    .home-img_artisjok .theart a {
       border-bottom: 1px solid silver;
       line-height: 18px;
       display: inline-block;

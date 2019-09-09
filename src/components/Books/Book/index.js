@@ -1,10 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { slugify } from '../../common/common';
 import { Link } from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser';
-
-console.log("Book works!");
 
 export default (props) => {
    
@@ -17,13 +13,14 @@ export default (props) => {
         </div>
         <div className="book-box">
             <div className="book-box_image">
-                <img src={`../public/img/books/${props.id}_cover.jpg`} alt=""/>
+                <img src={`/public/img/books/${props.id}_cover.jpg`} alt=""/>
             </div>
             <div className="book-box_credits">
                 <h6>{  props.author }</h6>    
                 <p>{  props.publisher } { props.year }</p>    
                 <p>Kitchen: { props.kitchen }</p>    
-                <p>Source / Read more <Link to='{ book.url }' target="_blank"  rel="noopener noreferrer">&nbsp;{ props.link }</Link></p> 
+                <p>Source / Read more <Link to='{ url }' target="_blank"  rel="noopener noreferrer">&nbsp;{ props.link }</Link></p> 
+
             </div>
         </div>
         <br/>
@@ -32,6 +29,7 @@ export default (props) => {
         </div>
         <p>Recipes</p>
         <div className="book-links">
+
         {props.recipes
             .filter(r => r.bookId === props.id)
             .map(({ id, title, index }, _id) => {
@@ -41,15 +39,9 @@ export default (props) => {
             </Link>                
             )
         })}
+
         </div>
         </React.Fragment>
+
     )
 }
-
-// function mapStateToProps(state) {  
-//     return {
-//       books: state.books,
-//     }
-// }
-  
-// export default connect(mapStateToProps)(Book)

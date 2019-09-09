@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, withRouter  } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { Switch, Route  } from 'react-router-dom';
 import Home from './components/Home';
 import Posts from './components/Posts';
 import Post from './components/Posts/Post';
@@ -10,58 +9,35 @@ import Books from './components/Books';
 import Book from './components/Books/Book';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import { hot } from 'react-hot-loader/root';
+// import { hot } from 'react-hot-loader/root';
 
 const apiEndpoint = 'https://trim-seahorse.cloudvent.net/api';
 
-class App extends Component {
-  state = {};
+export default class App extends Component {
+  state = {
+    books: [],
+    recipes: [],
+    posts: []
+  }
 
   async componentDidMount() {
-    const { loadBooks } = this.props
-    await fetch(`${apiEndpoint}/books.json`)
-    .then(response => response.json())
-    .then((json => {
-      loadBooks(json)
-    }))  
-    const { loadRecipes } = this.props
-    await fetch(`${apiEndpoint}/recipes.json`)
-    .then(response => response.json())
-    .then((json => {
-      loadRecipes(json)
-    }))  
-    const { loadPosts } = this.props
-    await fetch(`${apiEndpoint}/blog.json`)
-    .then(response => response.json())
-    .then((json => {
-      loadPosts(json)
-    }))  
+    const books = await (await fetch(`${apiEndpoint}/books.json`)).json()
+    this.setState({ books })
+    const recipes = await (await fetch(`${apiEndpoint}/recipes.json`)).json()
+    this.setState({ recipes })
+    const posts = await (await fetch(`${apiEndpoint}/blog.json`)).json()
+    this.setState({ posts })
   }
 
   render() {
-    const { books, recipes, posts } = this.props;
-    console.log(posts);
+    const { books, recipes, posts } = this.state;
+
     return (
       <div className='main'>
         <Nav />
         <Switch>
-        <Route exact path='/' component={Home}/>
-        <Route exact path='/books' render={
-          (props) => <Books {...props} books={books} />
-        } />
-        <Route path='/books/:id' render={
-          (props) => {
-            const book = books.find(book => book.id === props.match.params.id)
-            return <Book {...props} {...book} recipes={recipes}/>
-          }
-        } />
-        <Route exact path='/recipes' render={
-          (props) => <Recipes {...props} recipes={recipes} />} />
-        <Route path='/recipes/:id' render={
-          (props) => {
-            const recipe = recipes.find(recipe => recipe.id === props.match.params.id)
-            return <Recipe {...props} {...recipe} books={books} />
-          }
+        <Route exact path='/' render={
+          (props) => <Home {...props} books={books} recipes={recipes} posts={posts} />
         } />
         <Route exact path='/blog' render={
           (props) => <Posts {...props} posts={posts} books={books} />
@@ -72,7 +48,24 @@ class App extends Component {
             return <Post {...props} {...post} />            
           }
         } />
- 
+        <Route exact path='/recipes' render={
+          (props) => <Recipes {...props} recipes={recipes} />
+        } />
+        <Route path='/recipes/:id' render={
+          (props) => {
+            const recipe = recipes.find(recipe => recipe.id === props.match.params.id)
+            return <Recipe {...props} {...recipe} books={books} />
+          }
+        } />
+        <Route exact path='/books' render={
+          (props) => <Books {...props} books={books} />
+        } />
+        <Route path='/books/:id' render={
+          (props) => {
+            const book = books.find(book => book.id === props.match.params.id)
+            return <Book {...props} {...book} recipes={recipes}/>
+          }
+        } />
         </Switch>
         <Footer />
       </div>
@@ -80,29 +73,4 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state) {  
-  return {
-      books: state.books,
-      recipes: state.recipes,
-      posts: state.posts,
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  // console.log("App: mapDispatchToProps");
-  return {
-    loadBooks: (books) => {
-      dispatch({ type: 'LOAD_BOOKS', payload: books })
-    },
-    loadRecipes: (recipes) => {
-      dispatch({ type: 'LOAD_RECIPES', payload: recipes })
-    },
-    loadPosts: (posts) => {
-      dispatch({ type: 'LOAD_POSTS', payload: posts })
-    },
-
-  }
-}
-
-export default hot(withRouter(connect(mapStateToProps, mapDispatchToProps)(App)));
 

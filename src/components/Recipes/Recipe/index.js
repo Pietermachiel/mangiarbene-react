@@ -1,14 +1,9 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { slugify, truncate } from '../../common/common';
+import { Link } from 'react-router-dom';
+import { truncate } from '../../common/common';
 import ReactHtmlParser from 'react-html-parser';
 
-console.log("Recipe works!");
-
 export default (props) => {  
-    
-    console.log(props);
 
     return (
         <React.Fragment>
@@ -62,13 +57,4 @@ export default (props) => {
         </Link>
         </React.Fragment>
     )
-
 }
-
-// function mapStateToProps(state) {  
-//     return {
-//       recipes: state.recipes,
-//     }
-// }
-  
-// export default withRouter(connect(mapStateToProps)(Recipe))

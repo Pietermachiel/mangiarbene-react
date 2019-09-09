@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { slugify } from '../common/common';
 
-export default ({ match: { url }, recipes}) => {
+export default ({ match: { url }, recipes }) => {
 
         const dishes = ["starter", "aside", "main", "desert", "basics"]
 
@@ -16,9 +14,7 @@ export default ({ match: { url }, recipes}) => {
                         <p className="dish-title">{hit}</p>
                         {recipes
                         .filter(r => hit === r.dish)
-                        .map(({ title, id, index, book, product }) => {
-                            const thebook = book.map(b => b.title);
-                            // if (hit === recipe.dish)                           
+                        .map(({ title, id, index, book, product, bookTitle, bookId }) => {                      
                             return (
                            <div key={id} className="recipe">
                             <Link to={`/recipes/${id}`}>
@@ -28,8 +24,8 @@ export default ({ match: { url }, recipes}) => {
                                     <h5>
                                         { product }
                                         <span>
-                                            <Link to={`/books/${slugify(thebook)}`}>
-                                            &nbsp;&nbsp;{thebook}
+                                            <Link to={`/books/${bookId}`}>
+                                            &nbsp;&nbsp;{bookTitle}
                                             </Link>
                                         </span>
                                     </h5>
@@ -46,11 +42,3 @@ export default ({ match: { url }, recipes}) => {
             </div>
         )
 }
-
-// function mapStateToProps(state) {  
-//     return {
-//       recipes: state.recipes,
-//     }
-//   }
-  
-// export default connect(mapStateToProps)(Recipes)

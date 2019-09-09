@@ -464,5 +464,39 @@
     background-color: #FFF8D7;
   }
 
+  .home-img_pieter {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2em;
+    img {
+      width: 200px;
+      border-radius: 50%;
+    }
+  }
+  .home-img_vangogh {
+    margin-left: -100px;
+    margin-right: -100px;
+    margin-bottom: 2em;
+    img {
+      width: 100%;
+    }
+  }
+
+  .home-img_websites {
+    margin-left: -100px;
+    margin-right: -100px;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    img {
+      width: calc(50% - 20px);
+      border: 1px solid gray;
+    }
+  }
+
 } 
 

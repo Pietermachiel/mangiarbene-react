@@ -13,18 +13,16 @@ export default (props) => {
         <div className="recipe-recipe">
             <div className="recipe-recipe_ingredients">
                 <span>ingredients</span>
-                <p>ingredient 1</p>
-                <p>ingredient 2</p>
-                <p>ingredient 3</p>
-                <p>ingredient 4</p>           
+                <p>You must use</p>
+                <p>The finest </p>
+                <p>Ingredients</p>        
             </div>
             <div className="recipe-recipe_method">
                 <span>method</span>
                 <ol>
-                    <li>Step one</li>
-                    <li>Step two</li>
-                    <li>Step three</li>
-                    <li>Step four</li>    
+                    <li>He</li>
+                    <li>Ho</li>
+                    <li>Let's go</li>
                 </ol>
             </div>
         </div>

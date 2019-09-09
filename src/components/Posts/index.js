@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { slugify, truncate } from './common/common';
+import { slugify, truncate } from '../common/common';
 import ReactHtmlParser from 'react-html-parser';
 
-class Posts extends Component {
-
-    render() {
-        const category = [
-            "latest", "archive"
-        ]
-        const { posts } = this.props;
+export default ({ match: { url }, posts }) => {
+    console.log(posts);
+    
+    const category = ["latest", "archive"]
 
         return (
             <div>
@@ -76,13 +73,12 @@ class Posts extends Component {
                 </div>
             </div>
         )
-    }
 }
 
-function mapStateToProps(state) {  
-    return {
-      posts: state.posts,
-    }
-  }
+// function mapStateToProps(state) {  
+//     return {
+//       posts: state.posts,
+//     }
+//   }
   
-export default connect(mapStateToProps)(Posts)
+// export default connect(mapStateToProps)(Posts)

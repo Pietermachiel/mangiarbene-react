@@ -1,23 +1,19 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { slugify, truncate } from './common/common';
+import { slugify, truncate } from '../../common/common';
 import ReactHtmlParser from 'react-html-parser';
 
 console.log("Recipe works!");
 
-export function Recipe (props) {  
+export default (props) => {  
     
-    const recipe = props.recipes.find(({ id }) => id === props.match.params.id);
-
-    const booktitle = slugify(recipe.book[0].title);
-
     console.log(props);
 
     return (
         <React.Fragment>
         <div className="recipes layout-recipes">
-            <h1 className="mb-0">{ recipe.title }</h1>
+            <h1 className="mb-0">{ props.title }</h1>
         </div>
         <div className="recipe-recipe">
             <div className="recipe-recipe_ingredients">
@@ -39,20 +35,23 @@ export function Recipe (props) {
         </div>
         <br/>
         <hr/>
-        <Link className="zwart" to={`/books/${booktitle}`}>
+        <Link className="zwart" to={`/books/${props.bookId}`}>
         <div className="recipe-box">
             <div className="recipe-box_image">
-                <img src={`../public/img/books/${booktitle}_title.jpg`} alt=""/>
+                <img src={`../public/img/books/${props.bookId}_title.jpg`} alt=""/>
             </div>
             <div className="recipe-box_credits">
 
-            {recipe.book.map(hit => {
-                const truncatetext = truncate(hit.content);
+            {props.books
+                .filter(b => b.id === props.bookId)
+                .map(book => {
+                const truncatetext = truncate(book.content);
                 const parsedBookContent = ReactHtmlParser(truncatetext);
+                // if (props.bookId === book.id )
                 return (
-                <React.Fragment key={hit.index}>
-                <h6>{ hit.title }</h6>    
-                <p>{ hit.author }</p>     
+                <React.Fragment key={book.index}>
+                <h6>{ book.title }</h6>    
+                <p>{ book.author }</p>     
                 { parsedBookContent } <span>Read more ></span>    
                 </React.Fragment>
                 )
@@ -66,10 +65,10 @@ export function Recipe (props) {
 
 }
 
-function mapStateToProps(state) {  
-    return {
-      recipes: state.recipes,
-    }
-}
+// function mapStateToProps(state) {  
+//     return {
+//       recipes: state.recipes,
+//     }
+// }
   
-export default withRouter(connect(mapStateToProps)(Recipe))
+// export default withRouter(connect(mapStateToProps)(Recipe))

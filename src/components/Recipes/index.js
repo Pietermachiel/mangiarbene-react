@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { slugify } from './common/common';
+import { slugify } from '../common/common';
 
-class Recipes extends Component {
+export default ({ match: { url }, recipes}) => {
 
-    render() {
-        const dishes = [
-            "starter", "aside", "main", "desert", "basics"
-        ]
-
-        const { recipes } = this.props;
+        const dishes = ["starter", "aside", "main", "desert", "basics"]
 
         return (
             <div>
@@ -50,13 +45,12 @@ class Recipes extends Component {
                 </div>
             </div>
         )
-    }
 }
 
-function mapStateToProps(state) {  
-    return {
-      recipes: state.recipes,
-    }
-  }
+// function mapStateToProps(state) {  
+//     return {
+//       recipes: state.recipes,
+//     }
+//   }
   
-export default connect(mapStateToProps)(Recipes)
+// export default connect(mapStateToProps)(Recipes)

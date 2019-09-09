@@ -31,7 +31,7 @@ const Nav = (props) => {
                 <span></span>
                 <span></span>
             </button>  	
-            <a className="logo" href="/">MangiarBene</a>
+            <Link className="logo" to="/">MangiarBene</Link>
             <div 
                 className={ isOn ? `navbox-panel is-visible` : `navbox-panel`} 
                 id="navPanel"

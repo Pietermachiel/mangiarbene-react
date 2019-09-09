@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { slugify } from './common/common';
+import { slugify } from '../common/common';
 import _ from 'lodash';
 
-class Books extends Component {
+export default ({ match: { url }, books }) => {
 
-    render() {
         const kitchen = [
             "italian", "dutch", "spanish", "oriental", "english", "usa"
         ]
-        var { books } = this.props;
         books = _.sortBy(books, ['year']);
         
         return (
@@ -42,13 +40,12 @@ class Books extends Component {
                 </div>
             </div>
         )
-    }
 }
 
-function mapStateToProps(state) {  
-    return {
-      books: state.books,
-    }
-}
+// function mapStateToProps(state) {  
+//     return {
+//       books: state.books,
+//     }
+// }
   
-export default connect(mapStateToProps)(Books)
+// export default connect(mapStateToProps)(Books)

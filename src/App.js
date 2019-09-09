@@ -36,36 +36,39 @@ export default class App extends Component {
       <div className='main'>
         <Nav />
         <Switch>
-        <Route exact path='/' render={
-          (props) => <Home {...props} books={books} recipes={recipes} posts={posts} />
-        } />
-        <Route exact path='/blog' render={
-          (props) => <Posts {...props} posts={posts} books={books} />
-        } />
-        <Route path='/blog/:id' render={
-          (props) => {
-            const post = posts.find(post => post.id === props.match.params.id)
-            return <Post {...props} {...post} />            
-          }
-        } />
-        <Route exact path='/recipes' render={
-          (props) => <Recipes {...props} recipes={recipes} />
-        } />
-        <Route path='/recipes/:id' render={
-          (props) => {
-            const recipe = recipes.find(recipe => recipe.id === props.match.params.id)
-            return <Recipe {...props} {...recipe} books={books} />
-          }
-        } />
-        <Route exact path='/books' render={
-          (props) => <Books {...props} books={books} />
-        } />
-        <Route path='/books/:id' render={
-          (props) => {
-            const book = books.find(book => book.id === props.match.params.id)
-            return <Book {...props} {...book} recipes={recipes}/>
-          }
-        } />
+          <Route exact path='/' render={
+            (props) => <Home {...props} books={books} recipes={recipes} posts={posts} />
+          } />
+          {/* Books */}
+          <Route exact path='/books' render={
+            (props) => <Books {...props} books={books} />
+          } />
+          <Route path='/books/:id' render={
+            (props) => {
+              const book = books.find(book => book.id === props.match.params.id)
+              return <Book {...props} {...book} recipes={recipes}/>
+            }
+          } />    
+          {/* Recipes       */}
+          <Route exact path='/recipes' render={
+            (props) => <Recipes {...props} recipes={recipes} />
+          } />
+          <Route path='/recipes/:id' render={
+            (props) => {
+              const recipe = recipes.find(recipe => recipe.id === props.match.params.id)
+              return <Recipe {...props} {...recipe} books={books} />
+            }
+          } />
+          {/* Posts */}
+          <Route exact path='/blog' render={
+            (props) => <Posts {...props} posts={posts} books={books} />
+          } />
+          <Route path='/blog/:id' render={
+            (props) => {
+              const post = posts.find(post => post.id === props.match.params.id)
+              return <Post {...props} {...post} />            
+            }
+          } />
         </Switch>
         <Footer />
       </div>

@@ -16,4 +16,4 @@ const app = <BrowserRouter>
 
 ReactDOM.render(app, document.getElementById('main'));
 
-module.hot.accept();
+// module.hot.accept();

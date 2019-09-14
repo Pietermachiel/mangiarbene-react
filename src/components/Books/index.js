@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { slugify } from '../common/common';
 import _ from 'lodash';
 
 export default ({ match: { url }, books }) => {
@@ -22,7 +21,7 @@ export default ({ match: { url }, books }) => {
                     .filter(b => hit === b.kitchen)
                     .map(book => 
                         <div key={book.index} className="book">
-                        <Link to={"/books/" + slugify(book.title)}>
+                        <Link to={`/books/${book.id}`}>
                             <h3>
                                 <span>{ book.year}</span> { book.title }
                             </h3> 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { slugify, truncate } from '../common/common';
+import { truncate } from '../common/common';
 import ReactHtmlParser from 'react-html-parser';
 
 export default ({ match: { url }, posts }) => {
@@ -24,7 +24,7 @@ export default ({ match: { url }, posts }) => {
                         return (
                             <React.Fragment key={id}>
                             <div className="blog-post">
-                            <Link to={"/blog/" + slugify(post.title)}>
+                            <Link to={`/posts/${post.id}`}>
                                 <h3>
                                     { post.title }   
                                 </h3> 
@@ -48,7 +48,7 @@ export default ({ match: { url }, posts }) => {
                         return (
                             <React.Fragment key={id}>
                             <div className="blog-post">
-                            <Link to={"/blog/" + slugify(post.title)}>
+                            <Link to={`/posts/${post.id}`}>
                                 <h3>
                                     { post.title }   
                                 </h3> 

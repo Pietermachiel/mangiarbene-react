@@ -9,6 +9,7 @@ import Books from './components/Books';
 import Book from './components/Books/Book';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
+import Test from './components/Test';
 // import { hot } from 'react-hot-loader/root';
 
 const apiEndpoint = 'https://trim-seahorse.cloudvent.net/api';
@@ -36,6 +37,7 @@ export default class App extends Component {
       <div className='main'>
         <Nav />
         <Switch>
+          <Route path='/test' component={Test} />
           <Route exact path='/' render={
             (props) => <Home {...props} books={books} recipes={recipes} posts={posts} />
           } />
@@ -60,10 +62,10 @@ export default class App extends Component {
             }
           } />
           {/* Posts */}
-          <Route exact path='/blog' render={
+          <Route exact path='/posts' render={
             (props) => <Posts {...props} posts={posts} books={books} />
           } />
-          <Route path='/blog/:id' render={
+          <Route path='/posts/:id' render={
             (props) => {
               const post = posts.find(post => post.id === props.match.params.id)
               return <Post {...props} {...post} />            

@@ -5,7 +5,7 @@ import { Link, withRouter } from 'react-router-dom';
 const Nav = (props) => {
     const [isOn, setIsOn] = useState(false);
 
-    const nav = ["recipes", "books", "blog"];
+    const nav = ["recipes", "books", "posts"];
 
     function toggle() {
         isOn ? setIsOn(false) : setIsOn(true);

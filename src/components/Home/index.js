@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import _ from 'lodash';
+// import _ from 'lodash';
 import { slugify } from '../common/common';
 
 export default (props) => {
         
     const { books, recipes, posts } = props;
 
-    const recipeNumber = recipes.length;
-    var recipeRandom = _.random(recipeNumber, true);  
-    recipeRandom = Math.floor(recipeRandom);
+    // const recipeNumber = recipes.length;
+    // var recipeRandom = _.random(recipeNumber, true);  
+    // recipeRandom = Math.floor(recipeRandom);
 
-    const bookNumber = books.length;
-    var bookRandom = _.random(bookNumber, true);  
-    bookRandom = Math.floor(bookRandom);
+    // const bookNumber = books.length;
+    // var bookRandom = _.random(bookNumber, true);  
+    // bookRandom = Math.floor(bookRandom);
 
     return (    
         <div className='home'>
@@ -45,7 +45,7 @@ export default (props) => {
                     return (
                         <React.Fragment key={id}>
                         <div className="blog blog-post">
-                        <Link to={`/blog/${slugify(post.title)}`}>
+                        <Link to={`/posts/${slugify(post.title)}`}>
                             <h3>
                                 { post.title }   
                             </h3> 

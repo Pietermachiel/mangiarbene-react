@@ -986,7 +986,7 @@ a.pieterroozen {
       text-align: center; }
       @media (min-width: 769px) {
         .navbox .navbar li {
-          padding-left: 18px;
+          padding-left: 21px;
           display: inline;
           font-size: 18px;
           font-weight: 400;

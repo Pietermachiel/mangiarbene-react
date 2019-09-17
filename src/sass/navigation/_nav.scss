@@ -31,6 +31,9 @@
         height: 100%;
         max-width: 100%;
         max-height: 100%;
+        background-image: url(/public/img/artisjok-soft40.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
         background-color: #eae9e9;
         list-style: none;
         transition: all .2s ease-in-out;
@@ -39,19 +42,6 @@
         opacity: 0;
         z-index: 10;        
     }
-    // @media (min-width: $on-tablet) {
-    //     // visibility: visible;
-    //     // opacity: 1;
-    //     // background: none;
-    //     display: flex;
-    //     flex-basis: auto;
-    //     // flex-flow: row wrap;
-    //     justify-content: space-between;
-    //     width: calc(100% - 300px);
-    //     align-items: center;
-    //     padding-left: 10px;
-    //     padding-right: 10px;
-    // }
 }
 
 .is-visible {

@@ -77,11 +77,12 @@
 .nav-link {
   border-bottom: 1px solid transparent;
   color: $blauw;
-  font-weight: 300;
-  font-size: 36px;
-  line-height: 72px;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 96px;
   @media (min-width: $on-palm) {
       font-size: 21px;
+      font-weight: 300;
       line-height: 0;
   }
 }

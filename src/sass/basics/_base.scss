@@ -77,7 +77,7 @@ html {
   font-feature-settings: "kern" 1;
   font-variant-ligatures: none;
   text-rendering: optimizeLegibility;
-  background: #fff;
+  background: $background; // #fff;
 }
 
 %flex {

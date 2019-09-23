@@ -24,6 +24,7 @@ export default (props) => {
                 </div>       
             </div>
             <img src="/img/artisjok.jpg" alt=""/>
+            <img src="../../../public/img/artisjok.jpg" alt=""/>
             <img src="../../public/img/artisjok.jpg" alt=""/>
             <img src="../public/img/artisjok.jpg" alt=""/>
             <img src="./public/img/artisjok.jpg" alt=""/>

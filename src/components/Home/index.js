@@ -18,7 +18,7 @@ export default (props) => {
     return (    
         <div className='home'>
             <div className="home-img_artisjok">
-                <img src="/public/img/artisjok.jpg" alt=""/>
+                <img src="./public/img/artisjok.jpg" alt=""/>
                 <div className="theart">
                     <Link to={`/books/${slugify("Science in the Kitchen and the Art of Eating Well")}`}>The art of eating well</Link>
                 </div>       

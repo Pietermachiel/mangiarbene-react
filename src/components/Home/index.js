@@ -23,11 +23,11 @@ export default (props) => {
                     <Link to={`/books/${slugify("Science in the Kitchen and the Art of Eating Well")}`}>The art of eating well</Link>
                 </div>       
             </div>
+            <img src="/img/artisjok.jpg" alt=""/>
             <img src="../../public/img/artisjok.jpg" alt=""/>
             <img src="../public/img/artisjok.jpg" alt=""/>
             <img src="./public/img/artisjok.jpg" alt=""/>
             <img src="/public/img/artisjok.jpg" alt=""/>
-            <img src="public/img/artisjok.jpg" alt=""/>
 
             <div className="home-quote">
                 <p>

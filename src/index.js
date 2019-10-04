@@ -19,4 +19,4 @@ ReactDOM.render(app, document.getElementById('main'));
 
 // module.hot.accept();
 
-serviceWorker.register();
+serviceWorker.unregister();

@@ -20,12 +20,12 @@ export default (props) => {
             <div className="home-img_artisjok">
                 <img src="./public/img/artisjok.jpg" alt=""/>
                 <div className="theart">
-                    <Link to={`/books/${slugify("Science in the Kitchen and the Art of Eating Well")}`}>The art of eating well</Link>
+                    <Link to={`/books/${slugify("Science in the Kitchen and the Art of Eating Well")}`} aria-label="The art of eating well">The art of eating well</Link>
                 </div>       
             </div>
             <div className="home-quote">
                 <p>
-                "Cooking is a troublesome sprite. Often it may drive you to despair. Yet it is also very rewarding, for when you do succeed, or overcome a difficulty in doing so, you feel the satisfaction of a great triumph. <br/><br/> If you do not aspire to become a premier cook, you do not need to have been born with a pan on your head to become a good one. <span>Passion, care, and precision of method will generally suffice; then, of course, you must use the finest ingredients as your raw materials, for these will make you shine.</span>"
+                "Xooking is a troublesome sprite. Often it may drive you to despair. Yet it is also very rewarding, for when you do succeed, or overcome a difficulty in doing so, you feel the satisfaction of a great triumph. <br/><br/> If you do not aspire to become a premier cook, you do not need to have been born with a pan on your head to become a good one. <span>Passion, care, and precision of method will generally suffice; then, of course, you must use the finest ingredients as your raw materials, for these will make you shine.</span>"
                 </p>
                 <br/>
                 <p className="pellegrino">    
@@ -45,7 +45,7 @@ export default (props) => {
                     return (
                         <React.Fragment key={id}>
                         <div className="blog blog-post">
-                        <Link to={`/posts/${slugify(post.title)}`}>
+                        <Link to={`/posts/${slugify(post.title)}`} aria-label="Last post">
                             <h3>
                                 { post.title }   
                             </h3> 
@@ -69,7 +69,7 @@ export default (props) => {
 
                 return (
                     <div key={recipe.index} className="recipe">
-                    <Link to={`/recipes/${slugify(recipe.title)}`}>
+                    <Link to={`/recipes/${slugify(recipe.title)}`} aria-label="Recipe of the day">
                         <h3>{ recipe.title} { recipe.index }</h3> 
                     </Link>        
                         <div className="credits">
@@ -93,7 +93,7 @@ export default (props) => {
             .map(book => {
                 return (
                 <div key={book.index} className="book">
-                <Link to={`/books/${book.id}`}>
+                <Link to={`/books/${book.id}`} aria-label="Book of the day">
                     <h3>
                         <span>{ book.year}</span> { book.title }
                     </h3> 
@@ -108,17 +108,17 @@ export default (props) => {
             {/* database */}
             <p className="pl-2em">database</p>
             <div className="home-database">
-                <Link to="/recipes" className="nav-link">
+                <Link to="/recipes" className="nav-link" aria-label="Recipes">
                     <h3>{ recipes.length } recipes </h3>    
                 </Link>
-                <Link to="/books" className="nav-link">
+                <Link to="/books" className="nav-link" aria-label="Books">
                     <p>{ books.length } books</p>   
                 </Link>
             </div>        
 
             {/* website */}
             <p className="pl-2em">Jekyll website</p>
-            <a href='https://trim-seahorse.cloudvent.net' target="_blank" rel="noopener noreferrer">hosted at CloudCannon</a>
+            <a href='https://trim-seahorse.cloudvent.net' target="_blank" rel="noopener noreferrer" aria-label="Hosted at CloudCannon">hosted at CloudCannon</a>
 
         </div>
         )

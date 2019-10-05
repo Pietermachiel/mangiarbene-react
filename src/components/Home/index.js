@@ -25,7 +25,7 @@ export default (props) => {
             </div>
             <div className="home-quote">
                 <p>
-                "Cooking is a troublesome sprite. Often it may drive you to despair. Yet it is also very rewarding, for when you do succeed, or overcome a difficulty in doing so, you feel the satisfaction of a great triumph. <br/><br/> If you do not aspire to become a premier cook, you do not need to have been born with a pan on your head to become a good one. <span>Passion, care, and precision of method will generally suffice; then, of course, you must use the finest ingredients as your raw materials, for these will make you shine.</span>"
+                "Xooking is a troublesome sprite. Often it may drive you to despair. Yet it is also very rewarding, for when you do succeed, or overcome a difficulty in doing so, you feel the satisfaction of a great triumph. <br/><br/> If you do not aspire to become a premier cook, you do not need to have been born with a pan on your head to become a good one. <span>Passion, care, and precision of method will generally suffice; then, of course, you must use the finest ingredients as your raw materials, for these will make you shine.</span>"
                 </p>
                 <br/>
                 <p className="pellegrino">    

@@ -3,9 +3,14 @@
 <html lang="nl">
 <head>
   <meta charset="utf-8">
-  <link rel="icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="192x192" href="/logo192.png" />
+  <link rel="apple-touch-icon" sizes="512x512" href="/logo512.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Firedux-todo">
+  <link rel="manifest" href="/manifest.json" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MangiarBene</title>
   <meta name="description" content="Jekyll version of Jekyll/React API endpoint demo">
   <meta name="og:title" content="">
@@ -16,24 +21,6 @@
   <meta name="twitter:site" content="">
   <meta name="theme-color" content="#000000" />
   <meta name="background-color" content="#ffffff" />
-  <link rel="apple-touch-icon" sizes="192x192" href="/logo192.png" />
-  <link rel="manifest" href="/manifest.json">
-  <script async>
-    if ("serviceWorker" in navigator) {
-      if (navigator.serviceWorker.controller) {
-        console.log("An active service worker found, no need to register");
-      } else {
-        // Register the service worker
-        navigator.serviceWorker
-          .register("{{ site.baseurl }}/serviceworker.js", {
-            scope: "./"
-          })
-          .then(function (reg) {
-            console.log("Service worker has been registered for scope: " + reg.scope);
-          });
-      }
-    }
-  </script>
   <link rel="stylesheet" href="https://use.typekit.net/xyv8bqb.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
 </head>

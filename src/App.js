@@ -1,81 +1,100 @@
-import React, { Component } from 'react';
-import { Switch, Route  } from 'react-router-dom';
-import Home from './components/Home';
-import Posts from './components/Posts';
-import Post from './components/Posts/Post';
-import Recipes from './components/Recipes';
-import Recipe from './components/Recipes/Recipe';
-import Books from './components/Books';
-import Book from './components/Books/Book';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-import Test from './components/Test';
+import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Posts from "./components/Posts";
+import Post from "./components/Posts/Post";
+import Recipes from "./components/Recipes";
+import Recipe from "./components/Recipes/Recipe";
+import Books from "./components/Books";
+import Book from "./components/Books/Book";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Test from "./components/Test";
 // import { hot } from 'react-hot-loader/root';
 
-const apiEndpoint = 'https://trim-seahorse.cloudvent.net/api';
+const apiEndpoint = "https://mangiarbeneapi.roozen.nl/api";
 
 export default class App extends Component {
   state = {
     books: [],
     recipes: [],
-    posts: []
-  }
+    posts: [],
+  };
 
   async componentDidMount() {
-    const books = await (await fetch(`${apiEndpoint}/books.json`)).json()
-    this.setState({ books })
-    const recipes = await (await fetch(`${apiEndpoint}/recipes.json`)).json()
-    this.setState({ recipes })
-    const posts = await (await fetch(`${apiEndpoint}/blog.json`)).json()
-    this.setState({ posts })
+    const books = await (await fetch(`${apiEndpoint}/books.json`)).json();
+    this.setState({ books });
+    const recipes = await (await fetch(`${apiEndpoint}/recipes.json`)).json();
+    this.setState({ recipes });
+    const posts = await (await fetch(`${apiEndpoint}/blog.json`)).json();
+    this.setState({ posts });
   }
 
   render() {
     const { books, recipes, posts } = this.state;
+    console.log("recipes");
+    console.log(recipes);
 
     return (
-      <div className='main'>
+      <div className="main">
         <Nav />
         <Switch>
-          <Route path='/test' component={Test} />
-          <Route exact path='/' render={
-            (props) => <Home {...props} books={books} recipes={recipes} posts={posts} />
-          } />
+          <Route path="/test" component={Test} />
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <Home {...props} books={books} recipes={recipes} posts={posts} />
+            )}
+          />
           {/* Books */}
-          <Route exact path='/books' render={
-            (props) => <Books {...props} books={books} />
-          } />
-          <Route path='/books/:id' render={
-            (props) => {
-              const book = books.find(book => book.id === props.match.params.id)
-              return <Book {...props} {...book} recipes={recipes}/>
-            }
-          } />    
+          <Route
+            exact
+            path="/books"
+            render={(props) => <Books {...props} books={books} />}
+          />
+          <Route
+            path="/books/:id"
+            render={(props) => {
+              const book = books.find(
+                (book) => book.id === props.match.params.id
+              );
+              return <Book {...props} {...book} recipes={recipes} />;
+            }}
+          />
           {/* Recipes       */}
-          <Route exact path='/recipes' render={
-            (props) => <Recipes {...props} recipes={recipes} />
-          } />
-          <Route path='/recipes/:id' render={
-            (props) => {
-              const recipe = recipes.find(recipe => recipe.id === props.match.params.id)
-              return <Recipe {...props} {...recipe} books={books} />
-            }
-          } />
+          <Route
+            exact
+            path="/recipes"
+            render={(props) => <Recipes {...props} recipes={recipes} />}
+          />
+          <Route
+            path="/recipes/:id"
+            render={(props) => {
+              const recipe = recipes.find(
+                (recipe) => recipe.id === props.match.params.id
+              );
+              return <Recipe {...props} {...recipe} books={books} />;
+            }}
+          />
           {/* Posts */}
-          <Route exact path='/posts' render={
-            (props) => <Posts {...props} posts={posts} books={books} />
-          } />
-          <Route path='/posts/:id' render={
-            (props) => {
-              const post = posts.find(post => post.id === props.match.params.id)
-              return <Post {...props} {...post} />            
-            }
-          } />
+          <Route
+            exact
+            path="/posts"
+            render={(props) => <Posts {...props} posts={posts} books={books} />}
+          />
+          <Route
+            path="/posts/:id"
+            render={(props) => {
+              const post = posts.find(
+                (post) => post.id === props.match.params.id
+              );
+              return <Post {...props} {...post} />;
+            }}
+          />
         </Switch>
         <Footer />
       </div>
     );
   }
 }
-
-
